@@ -7,7 +7,7 @@ import FinanceScreen from './components/FinanceScreen';
 import SettingsScreen from './components/SettingsScreen';
 import VisaFormModal from './components/VisaFormModal';
 import { FullVisaDetails } from './types';
-import { getCustomers, getVisas, getCompanySettings } from './services/storageService';
+import { getCustomers, getVisas, getCompanySettings } from './webStorageService';
 import { Plus, Menu } from 'lucide-react';
 
 const App: React.FC = () => {
@@ -30,8 +30,8 @@ const App: React.FC = () => {
     setCompanyName(settings.name);
     
     // Merge data for easier display
-    const merged: FullVisaDetails[] = visas.map(visa => {
-      const customer = customers.find(c => c.id === visa.customerId);
+    const merged: FullVisaDetails[] = visas.map((visa: any) => {
+      const customer = customers.find((c: any) => c.id === visa.customerId);
       return {
         ...visa,
         customerName: customer ? customer.name : 'غير معروف',

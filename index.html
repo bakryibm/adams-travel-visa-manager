@@ -26,6 +26,8 @@
                 red: '#ce1126',
                 green: '#008000',
                 white: '#ffffff',
+                blue: '#0073cf',
+                yellow: '#f9d228',
               }
             }
           },
@@ -36,6 +38,13 @@
       body {
         font-family: 'Tajawal', sans-serif;
         background-color: #f3f4f6;
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.5s ease-in;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
       }
     </style>
   <script type="importmap">
@@ -53,7 +62,7 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+<link rel="stylesheet" href="https://cdn.tailwindcss.com">
 </head>
   <body>
     <div id="root"></div>
